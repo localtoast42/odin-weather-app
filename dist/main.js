@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://odin-weather-app/./src/index.js?");
+eval("async function getWeather(location) {\n    const response = await fetch(createRequestURL(location));\n    const weatherData = await response.json();\n    console.log(weatherData.current);\n};\n\nfunction createRequestURL(location) {\n    let requestURL = \n        API_BASE_URL + \n        '/current.json' +\n        '?key=' + API_KEY + \n        '&q=' + location;\n    return requestURL;\n};\n\nconst API_BASE_URL = 'https://api.weatherapi.com/v1';\nconst API_KEY = '8c3933d6332d42e9b98220128242302';\n\ngetWeather('boston');\n\n//# sourceURL=webpack://odin-weather-app/./src/index.js?");
 
 /***/ })
 

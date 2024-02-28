@@ -1,3 +1,3 @@
-import { getWeather } from "./requests";
+import { handleWeatherData } from "./requests";
 
-getWeather('boston');
+console.log(handleWeatherData('boston'));

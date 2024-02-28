@@ -7,17 +7,27 @@ body {
 .container {
     display: flex;
     margin: 24px;
+    gap: 24px;
 }
 
 .forecast {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 240px);
 }
 
 .forecast-day {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightblue;
+    padding: 12px;
+    width: 200px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 .condition {

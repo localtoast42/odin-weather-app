@@ -7,13 +7,16 @@ function updateForecast(forecast) {
 }
 
 function createForecastDay(forecastDay) {
-    console.log(forecastDay);
     const forecastDayDiv = document.createElement('div');
-    const dateText = document.createElement('h1');
+    forecastDayDiv.classList.add('forecast-day');
+
+    const dateText = document.createElement('h2');
     dateText.textContent = forecastDay.date;
 
     const conditionDiv = document.createElement('div');
-    const conditionText = document.createElement('h2');
+    conditionDiv.classList.add('condition');
+
+    const conditionText = document.createElement('h3');
     const conditionImg = document.createElement('img');
 
     conditionText.textContent = forecastDay.condition.text;

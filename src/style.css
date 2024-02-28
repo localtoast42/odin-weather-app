@@ -16,6 +16,14 @@ body {
 
 .forecast-day {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form {

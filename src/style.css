@@ -21,7 +21,7 @@ form {
 .field {
     display: flex;
     justify-content: flex-end;
-    gap: 6px;
+    gap: 12px;
 }
 
 label {
@@ -31,8 +31,9 @@ label {
 
 input {
     margin-bottom: 8px;
-    width: 200px;
+    width: 100px;
     font-size: 18px;
+    text-align: right;
 }
 
 button {

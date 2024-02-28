@@ -4,6 +4,13 @@ body {
     margin: 0;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    align-self: flex-end;
+}
+
 .container {
     display: flex;
     margin: 24px;
@@ -60,7 +67,7 @@ input {
 }
 
 button {
-    align-self: center;
+    align-self: flex-end;
     padding: 6px 12px;
     font-size: 16px;
     font-weight: 700;

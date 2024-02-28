@@ -14,6 +14,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.forecast-day {
+    display: flex;
+}
+
 form {
     display: flex;
     flex-direction: column;

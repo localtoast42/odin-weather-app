@@ -10,7 +10,7 @@ const days = [];
 
 for (let i = 0; i < 3; i++) {
     const day = document.createElement('div');
-    day.classList.add('day');
+    day.classList.add('forecast-day');
     days.push(day);
 };
 

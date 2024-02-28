@@ -1,31 +1,37 @@
 import { updateForecast } from "./display";
 
-async function getWeather(location) {
-    const response = await fetch(createRequestURL(location));
+async function getWeather(location, numDays) {
+    const response = await fetch(createRequestURL(location, numDays));
     const weatherData = await response.json();
     return weatherData;
 };
 
-function createRequestURL(location) {
+function createRequestURL(location, numDays) {
     let requestURL = 
         API_BASE_URL + 
-        '/current.json' +
+        '/forecast.json' +
         '?key=' + API_KEY + 
-        '&q=' + location;
+        '&q=' + location +
+        '&days=' + numDays;
     return requestURL;
 };
 
-async function handleWeatherData(location) {
-    const data = await getWeather(location);
-    console.log(data.current);
-    const forecast = {
-        condition: data.current.condition,
-        temp_c: data.current.temp_c,
-        temp_f: data.current.temp_f,
-        feelslike_c: data.current.feelslike_c,
-        feelslike_f: data.current.feelslike_f,
-        humidity: data.current.humidity,
-    }
+async function handleWeatherData(location, numDays) {
+    const data = await getWeather(location, numDays);
+    const forecast = [];
+
+    for (let i = 0; i < numDays; i++) {
+        const forecastDay = {
+            date: data.forecast.forecastday[i].date,
+            condition: data.forecast.forecastday[i].day.condition,
+            maxtemp_c: data.forecast.forecastday[i].day.maxtemp_c,
+            maxtemp_f: data.forecast.forecastday[i].day.maxtemp_f,
+            mintemp_c: data.forecast.forecastday[i].day.mintemp_c,
+            mintemp_f: data.forecast.forecastday[i].day.mintemp_f,
+            avghumidity: data.forecast.forecastday[i].day.avghumidity,
+        };
+        forecast.push(forecastDay);
+    };
 
     console.log(forecast);
 

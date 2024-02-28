@@ -1,3 +1,3 @@
 import { handleWeatherData } from "./requests";
 
-handleWeatherData('boston');
+handleWeatherData('boston', 3);

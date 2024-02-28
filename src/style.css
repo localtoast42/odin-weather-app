@@ -23,9 +23,9 @@ p {
 }
 
 .forecast-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 48px 125px 75px;
+    justify-content: center;
     background-color: lightblue;
     padding: 12px;
     width: 200px;
@@ -41,6 +41,14 @@ h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.temperature {
+    width: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    justify-self: center;
 }
 
 form {

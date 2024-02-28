@@ -25,6 +25,19 @@ function createForecastDay(forecastDay) {
     conditionDiv.appendChild(conditionText);
 
     const temperatureDiv = document.createElement('div');
+    temperatureDiv.classList.add('temperature');
+    const highText = document.createElement('p');
+    highText.textContent = 'High';
+    const lowText = document.createElement('p');
+    lowText.textContent = 'Low';
+    const highTemp = document.createElement('p');
+    highTemp.textContent = forecastDay.maxtemp_f;
+    const lowTemp = document.createElement('p');
+    lowTemp.textContent = forecastDay.mintemp_f;
+    temperatureDiv.appendChild(highText);
+    temperatureDiv.appendChild(lowText);
+    temperatureDiv.appendChild(highTemp);
+    temperatureDiv.appendChild(lowTemp);
 
     forecastDayDiv.appendChild(dateText);
     forecastDayDiv.appendChild(conditionDiv);

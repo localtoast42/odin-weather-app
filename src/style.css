@@ -3,3 +3,17 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.container {
+    display: flex;
+    margin: 12px;
+}
+
+.forecast {
+    display: grid;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

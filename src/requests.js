@@ -17,14 +17,17 @@ function createRequestURL(location) {
 
 async function handleWeatherData(location) {
     const data = await getWeather(location);
+    console.log(data.current);
     const forecast = {
-        condition: data.condition,
-        temp_c: data.temp_c,
-        temp_f: data.temp_f,
-        feelslike_c: data.feelslike_c,
-        feelslike_f: data.feelslike_f,
-        humidity: data.humidity,
+        condition: data.current.condition,
+        temp_c: data.current.temp_c,
+        temp_f: data.current.temp_f,
+        feelslike_c: data.current.feelslike_c,
+        feelslike_f: data.current.feelslike_f,
+        humidity: data.current.humidity,
     }
+
+    console.log(forecast);
 
     updateForecast(forecast);
 };
